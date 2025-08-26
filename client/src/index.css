@@ -8,3 +8,6 @@
 @theme {
   --color-primary: #FF5758;
 }
+main {
+  padding-top: 4.5rem;
+}

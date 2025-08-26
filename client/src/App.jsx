@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import WriteSymptom from "./pages/WriteSymptom";
 import ReviewReport from "./pages/ReviewReport";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 const ProtectedRoute = ({ children }) => {
   const { isSignedIn } = useUser();
@@ -19,27 +20,30 @@ const ProtectedRoute = ({ children }) => {
 
 const App = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-pink-50">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/write-symptom"
-          element={
-            <ProtectedRoute>
-              <WriteSymptom />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/review-report"
-          element={
-            <ProtectedRoute>
-              <ReviewReport />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <main className="pt-20 px-4 lg:px-8">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/write-symptom"
+            element={
+              <ProtectedRoute>
+                <WriteSymptom />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/review-report"
+            element={
+              <ProtectedRoute>
+                <ReviewReport />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 };
