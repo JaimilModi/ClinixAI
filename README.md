@@ -1,45 +1,49 @@
-ClinixAI
+# 🏥 ClinixAI
 
-ClinixAI is an advanced healthcare application designed to streamline patient management and enhance clinical workflows. Built with modern technologies, it offers a seamless user experience for both medical professionals and patients.
+**ClinixAI** is a cutting-edge healthcare application that helps streamline patient management and enhances clinical workflows. It provides a seamless experience for both medical professionals and patients, using modern web technologies.
 
-🚀 Live Demo
+---
 
-Experience ClinixAI in action:
+## 🚀 Live Demo
 
-👉 https://clinix-ai.vercel.app/
+Experience ClinixAI live:
 
-📁 Project Structure
+[🌐 Visit ClinixAI](https://clinix-ai.vercel.app/)
+
+--
+
+## 📁 Project Structure
 
 The repository is organized into two main directories:
 
-client: Contains the frontend application.
 
-server: Houses the backend services.
+****ClinixAI****
 
-🛠️ Technologies Used
 
-Frontend: React, Tailwind CSS
+- **client** # Frontend application built with React
 
-Backend: Node.js, Express
+- **server** # Backend services powered by Node.js & Express
 
-Database: MongoDB
+---
 
-Authentication: JWT
+## 🛠️ Technologies Used
 
-Deployment: Vercel (Frontend), Vercel Serverless Functions (Backend)
+**Frontend:**
+- React
+- Tailwind CSS
 
-⚙️ Setup Instructions
-Prerequisites
+**Backend:**
+- Node.js
+- Express
 
-Ensure you have the following installed:
+**Database:**
+- SQL
 
-Node.js (v16 or higher)
+**Authentication:**
+- JWT (JSON Web Tokens)
 
-npm or yarn
+**Deployment:**
+- Vercel (Frontend)
+- Vercel Serverless Functions (Backend)
 
-MongoDB (for local development) or a MongoDB Atlas account
-
-📄 License
-
-This project is licensed under the MIT License - see the LICENSE
- file for details.
+---
