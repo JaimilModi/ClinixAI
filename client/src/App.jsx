@@ -20,11 +20,10 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const App = () => {
-
-  const {getToken} = useAuth()
-  useEffect(()=>{
-    getToken().then((token)=>console.log(token));
-  },[])
+  // const { getToken } = useAuth();
+  // useEffect(() => {
+  //   getToken().then((token) => console.log(token));
+  // }, []);
 
   return (
     <div className="min-h-screen bg-pink-50">
