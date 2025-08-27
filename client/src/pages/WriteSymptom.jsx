@@ -28,7 +28,7 @@ const WriteSymptom = () => {
       const prompt = `You are ClinixAI, a medical AI assistant. Generate a patient-friendly health report about the symptom: "${input}" with insights, possible causes, prevention, and when to see a doctor. Length: ${selectedLength.text}.`;
 
       const { data } = await axios.post(
-        "/api/ai/generate-article", //TODO
+        "/api/write-symptom",
         { prompt, length: selectedLength.length },
         {
           headers: { Authorization: `Bearer ${await getToken()}` },

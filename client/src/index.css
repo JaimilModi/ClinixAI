@@ -6,8 +6,12 @@
 }
 
 @theme {
-  --color-primary: #FF5758;
+  --color-primary: #ff5758;
 }
 main {
   padding-top: 4.5rem;
+}
+.reset-tw,
+.reset-tw * {
+  all: revert !important;
 }

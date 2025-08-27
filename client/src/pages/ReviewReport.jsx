@@ -22,8 +22,7 @@ const ReviewReport = () => {
       const formData = new FormData();
       formData.append("pdf", input);
 
-      //TODO
-      const { data } = await axios.post("/api/ai/review-pdf", formData, {
+      const { data } = await axios.post("/api/review-report", formData, {
         headers: { Authorization: `Bearer ${await getToken()}` },
       });
 

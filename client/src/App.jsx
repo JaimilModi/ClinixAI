@@ -7,6 +7,7 @@ import WriteSymptom from "./pages/WriteSymptom";
 import ReviewReport from "./pages/ReviewReport";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const ProtectedRoute = ({ children }) => {
   const { isSignedIn } = useUser();
@@ -21,6 +22,7 @@ const ProtectedRoute = ({ children }) => {
 const App = () => {
   return (
     <div className="min-h-screen bg-pink-50">
+      <Toaster />
       <Navbar />
       <main className="pt-20 px-4 lg:px-8">
         <Routes>
