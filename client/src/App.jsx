@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { useUser } from "@clerk/clerk-react";
+import { useAuth, useUser } from "@clerk/clerk-react";
 
 import Navbar from "./components/Navbar";
 import WriteSymptom from "./pages/WriteSymptom";
@@ -20,6 +20,12 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const App = () => {
+
+  const {getToken} = useAuth()
+  useEffect(()=>{
+    getToken().then((token)=>console.log(token));
+  },[])
+
   return (
     <div className="min-h-screen bg-pink-50">
       <Toaster />
