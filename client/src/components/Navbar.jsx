@@ -14,7 +14,7 @@ const Navbar = () => {
     <div
       className="fixed z-50 w-full flex justify-between items-center 
       py-2 sm:py-3 px-4 sm:px-20 xl:px-32 
-      bg-gradient-to-r from-white/90 to-pink-100/90 backdrop-blur-md"
+      bg-gradient-to-r from-white/90 to-teal-50/90 backdrop-blur-md"
     >
       <img
         src="/ClinixAI.png"
@@ -32,19 +32,18 @@ const Navbar = () => {
           <button
             key={link.path}
             onClick={() => navigate(link.path)}
-            className="relative text-primary font-semibold 
-            transition duration-300 group 
-            hover:scale-110 hover:rotate-1"
+            className="relative text-teal-600 font-semibold 
+            transition duration-300 group"
             style={{
               animation: `fadeIn 0.5s ease forwards`,
               animationDelay: `${i * 0.15}s`,
             }}
           >
-            <span className="group-hover:text-primary transition">
+            <span className="group-hover:text-purple-600 transition">
               {link.label}
             </span>
             <span
-              className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary 
+              className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-teal-400 to-purple-600 
               transition-all duration-300 group-hover:w-full"
             ></span>
           </button>
@@ -57,7 +56,7 @@ const Navbar = () => {
             onClick={openSignIn}
             aria-label="Sign in"
             className="flex items-center gap-2 rounded-full text-sm cursor-pointer 
-            bg-primary hover:bg-primary/90 transition-all duration-300 
+            bg-teal-600 hover:bg-purple-600 transition-all duration-300 
             px-6 py-2 text-white shadow-md hover:shadow-xl 
             hover:scale-110 active:scale-95"
           >
@@ -75,7 +74,7 @@ const Navbar = () => {
             onClick={openSignIn}
             aria-label="Sign in"
             className="flex items-center gap-2 rounded-full text-xs cursor-pointer 
-            bg-primary hover:bg-primary/90 transition-all duration-300 
+            bg-teal-600 hover:bg-purple-600 transition-all duration-300 
             px-4 py-1.5 text-white shadow-md hover:shadow-xl 
             hover:scale-105 active:scale-95"
           >
@@ -84,7 +83,7 @@ const Navbar = () => {
         )}
 
         <Menu
-          className="w-8 h-8 cursor-pointer text-primary"
+          className="w-8 h-8 cursor-pointer text-teal-600"
           onClick={() => setMenuOpen(true)}
         />
       </div>
@@ -96,7 +95,7 @@ const Navbar = () => {
         sm:hidden z-40`}
       >
         <div
-          className={`absolute inset-0 bg-gradient-to-b from-white to-pink-100 transition-all duration-500 
+          className={`absolute inset-0 bg-gradient-to-b from-white to-teal-50 transition-all duration-500 
           ${menuOpen ? "opacity-100" : "opacity-0"}`}
         ></div>
 
@@ -107,38 +106,27 @@ const Navbar = () => {
         >
           <div className="absolute top-6 right-6 z-50">
             <X
-              className="w-8 h-8 cursor-pointer text-primary transition-transform duration-500 ease-in-out hover:rotate-180 hover:scale-110 active:rotate-360"
+              className="w-8 h-8 cursor-pointer text-teal-600 transition-transform duration-500 ease-in-out hover:rotate-180 hover:scale-110 active:rotate-360"
               onClick={() => setMenuOpen(false)}
             />
           </div>
 
-          <button
-            onClick={() => {
-              navigate("/");
-              setMenuOpen(false);
-            }}
-            className="text-2xl font-bold text-primary hover:scale-110 hover:tracking-wide transition-transform duration-300"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => {
-              navigate("/write-symptom");
-              setMenuOpen(false);
-            }}
-            className="text-2xl font-bold text-primary hover:scale-110 hover:tracking-wide transition-transform duration-300"
-          >
-            Write Symptom
-          </button>
-          <button
-            onClick={() => {
-              navigate("/review-report");
-              setMenuOpen(false);
-            }}
-            className="text-2xl font-bold text-primary hover:scale-110 hover:tracking-wide transition-transform duration-300"
-          >
-            Review Report
-          </button>
+          {["Home", "Write Symptom", "Review Report"].map((item, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                navigate(
+                  item === "Home"
+                    ? "/"
+                    : `/${item.toLowerCase().replace(" ", "-")}`
+                );
+                setMenuOpen(false);
+              }}
+              className="text-2xl font-bold text-teal-600 hover:scale-110 hover:tracking-wide transition-transform duration-300"
+            >
+              {item}
+            </button>
+          ))}
         </div>
       </div>
     </div>

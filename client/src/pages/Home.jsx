@@ -47,7 +47,7 @@ const Home = () => {
     ));
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-pink-50 to-pink-100 flex flex-col pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-purple-50 flex flex-col pt-20">
       {location.state?.message && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -67,15 +67,15 @@ const Home = () => {
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <div className="flex flex-wrap justify-center md:justify-start">
-              {renderHeading("Welcome to ", "text-black")}
+              {renderHeading("Welcome to ", "text-slate-700")}
             </div>
             <div className="flex flex-wrap justify-center md:justify-start">
-              {renderHeading("ClinixAI", "text-primary")}
+              {renderHeading("ClinixAI", "text-teal-600")}
             </div>
           </h1>
 
           <motion.p
-            className="text-lg text-gray-700 mb-6"
+            className="text-lg text-slate-700 mb-6"
             variants={fadeUpVariant}
             custom={1}
             initial="hidden"
@@ -94,16 +94,22 @@ const Home = () => {
           >
             <motion.button
               onClick={() => navigate("/write-symptom")}
-              className="px-6 py-3 bg-[#FF5758] hover:bg-[#e14c4d] text-white rounded-xl shadow-lg"
-              whileHover={{ scale: 1.08 }}
+              className="px-6 py-3 rounded-xl shadow-lg text-white bg-gradient-to-r from-teal-400 to-purple-600"
+              whileHover={{
+                scale: 1.05,
+                background: "linear-gradient(to right, #38b2ac, #805ad5)",
+              }}
               whileTap={{ scale: 0.95 }}
             >
               Write Symptom
             </motion.button>
             <motion.button
               onClick={() => navigate("/review-report")}
-              className="px-6 py-3 bg-[#FF5758] hover:bg-[#e14c4d] text-white rounded-xl shadow-lg"
-              whileHover={{ scale: 1.08 }}
+              className="px-6 py-3 rounded-xl shadow-lg text-white bg-gradient-to-r from-teal-400 to-purple-600"
+              whileHover={{
+                scale: 1.05,
+                background: "linear-gradient(to right, #38b2ac, #805ad5)",
+              }}
               whileTap={{ scale: 0.95 }}
             >
               Review Report
@@ -133,7 +139,7 @@ const Home = () => {
         variants={fadeUpVariant}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl font-bold text-center text-primary mb-10">
+        <h2 className="text-3xl font-bold text-center text-teal-600 mb-10">
           Why Choose ClinixAI?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -156,23 +162,22 @@ const Home = () => {
           ].map((item, i) => (
             <motion.div
               key={i}
-              className="p-6 bg-pink-50 rounded-2xl shadow-md hover:shadow-xl text-center"
+              className="p-6 bg-teal-50 rounded-2xl shadow-md hover:shadow-xl text-center"
               variants={fadeUpVariant}
               custom={i}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
             >
               <img
                 src={item.img}
                 alt={item.title}
                 className="w-16 mx-auto mb-4"
               />
-              <h3 className="text-xl font-semibold text-pink-700 mb-2">
+              <h3 className="text-xl font-semibold text-teal-700 mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600">{item.desc}</p>
+              <p className="text-slate-700">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -186,7 +191,7 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <motion.h2
-          className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 relative inline-block"
+          className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 relative inline-block"
           variants={fadeUpVariant}
           custom={0}
         >
@@ -194,7 +199,7 @@ const Home = () => {
         </motion.h2>
 
         <motion.p
-          className="text-gray-600 mb-6"
+          className="text-slate-700 mb-6"
           variants={fadeUpVariant}
           custom={1}
         >
@@ -203,8 +208,11 @@ const Home = () => {
 
         <motion.button
           onClick={() => navigate("/write-symptom")}
-          className="px-8 py-3 bg-[#FF5758] hover:bg-[#e14c4d] text-white rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-pink-300"
-          whileHover={{ scale: 1.08 }}
+          className="px-8 py-3 rounded-xl shadow-lg text-white bg-gradient-to-r from-teal-400 to-purple-600"
+          whileHover={{
+            scale: 1.05,
+            background: "linear-gradient(to right, #38b2ac, #805ad5)",
+          }}
           whileTap={{ scale: 0.95 }}
         >
           Get Started
