@@ -50,7 +50,7 @@ export const reviewReport = async (req, res) => {
     const dataBuffer = fs.readFileSync(PDF.path);
     const pdfData = await pdf(dataBuffer);
 
-    const prompt = `You are a medical assistant AI. Please review the attached patient's medical report thoroughly. 
+    const prompt = `You are a medical assistant AI named ClinixAI so act as the Clinix AI for giving response. Please review the attached patient's medical report thoroughly. 
       Analyze it as a complete document and provide clear, structured, and constructive feedback. 
       Focus on:
       - Clarity of the information presented
