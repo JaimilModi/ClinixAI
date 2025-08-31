@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Facebook, X, Instagram, HeartPulse } from "lucide-react";
+import { Mail, Facebook, Instagram, HeartPulse, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -63,11 +63,12 @@ const Footer = () => {
             Get the latest updates on healthcare AI innovations.
           </p>
           <div className="flex justify-center md:justify-start space-x-3">
-            {[<Mail />, <Facebook />, <X />, <Instagram />].map((icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className={`p-3 rounded-full border border-gray-300 text-teal-600 
+            {[<Mail />, <Facebook />, <Twitter />, <Instagram />].map(
+              (icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className={`p-3 rounded-full border border-gray-300 text-teal-600 
           transition-transform duration-500 transform 
           ${i === 0 ? "hover:scale-110 hover:translate-y-[-3px]" : ""}
           ${i === 1 ? "hover:scale-105 hover:rotate-6" : ""}
@@ -82,11 +83,12 @@ const Footer = () => {
               : ""
           }
         `}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                {icon}
-              </a>
-            ))}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  {icon}
+                </a>
+              )
+            )}
           </div>
         </div>
       </div>

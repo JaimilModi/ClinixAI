@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { useAuth, useUser } from "@clerk/clerk-react";
+import { useUser, RedirectToSignIn, SignIn, SignUp } from "@clerk/clerk-react";
 
 import Navbar from "./components/Navbar";
 import WriteSymptom from "./pages/WriteSymptom";
@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }) => {
   const { isSignedIn } = useUser();
 
   if (!isSignedIn) {
-    return <Home message="Please sign in first to access this page." />;
+    return <RedirectToSignIn redirectUrl="/sign-in" />;
   }
 
   return children;
@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children }) => {
 const App = () => {
   // const { getToken } = useAuth();
   // useEffect(() => {
-  //   getToken().then((token) => console.log(token));
+  // getToken().then((token) => console.log(token));
   // }, []);
 
   return (
@@ -32,6 +32,15 @@ const App = () => {
       <main className="pt-20 px-4 lg:px-8">
         <Routes>
           <Route path="/" element={<Home />} />
+
+          <Route
+            path="/sign-in/*"
+            element={<SignIn routing="path" path="/sign-in" />}
+          />
+          <Route
+            path="/sign-up/*"
+            element={<SignUp routing="path" path="/sign-up" />}
+          />
           <Route
             path="/write-symptom"
             element={

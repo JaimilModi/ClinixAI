@@ -1,14 +1,11 @@
 import React from "react";
-import { useUser } from "@clerk/clerk-react";
-import { Navigate } from "react-router-dom";
+import { useUser, RedirectToSignIn } from "@clerk/clerk-react";
 
 const ProtectedRoute = ({ children }) => {
   const { isSignedIn } = useUser();
 
   if (!isSignedIn) {
-    return (
-      <Navigate to="/" replace state={{ message: "Please sign in first!" }} />
-    );
+    return <RedirectToSignIn redirectUrl="/sign-up" />;
   }
 
   return children;
